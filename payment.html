@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools Nepal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   <!-- Navigation (Similar to Homepage) -->
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <div class="flex items-center">
+                <a href="./dashboard.html" class="text-2xl font-extrabold text-teal-800">Tools Nepal</a>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="./dashboard.html" class="text-gray-600 hover:text-gray-900">Home</a>
+                <a href="./history.html" class="text-gray-600 hover:text-gray-900">Purchase History</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="./" class="text-gray-600 hover:text-gray-900">
+                    Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- purchase history table  -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
+        <h3 class="text-3xl font-bold text-center mb-10">Make Payment</h3>
+        <p class="text-gray-600 mb-4">Scan the QR code below to make a payment.</p>
+        <div class="bg-gray-100 p-4 rounded-lg mb-4">
+            <img src="https://docs.lightburnsoftware.com/legacy/img/QRCode/ExampleCode.png" alt="QR Code" class="mx-auto">
+        </div>
+        <form action="#" method="POST" enctype="multipart/form-data" class="space-y-4">
+            <label class="block">
+                <span class="text-gray-700">Upload Payment Screenshot</span>
+                <input type="file" name="payment_screenshot" accept="image/*" 
+                        class="mt-2 block w-full px-4 py-2 text-gray-700 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-300">
+            </label>
+            <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+                Submit Payment
+            </button>
+        </form> 
+    </div>
+</body>
+</html>

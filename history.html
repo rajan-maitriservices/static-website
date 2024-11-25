@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools Nepal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   <!-- Navigation (Similar to Homepage) -->
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <div class="flex items-center">
+                <a href="./dashboard.html" class="text-2xl font-extrabold text-teal-800">Tools Nepal</a>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="./dashboard.html" class="text-gray-600 hover:text-gray-900">Home</a>
+                <a href="./history.html" class="text-teal-600 hover:text-gray-900">Purchase History</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="./" class="text-gray-600 hover:text-gray-900">
+                    Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- purchase history table  -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
+        <h3 class="text-3xl font-bold text-center mb-10">Purchase History</h3>
+        <table class="w-full border-collapse border border-gray-200 text-left">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="border border-gray-200 px-4 py-2">Product</th>
+                    <th class="border border-gray-200 px-4 py-2">Price</th>
+                    <th class="border border-gray-200 px-4 py-2">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border border-gray-200 px-4 py-2">Product 1</td>
+                    <td class="border border-gray-200 px-4 py-2"> रु 200 </td>
+                    <td class="border border-gray-200 px-4 py-2 text-green-600">Delivered</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-200 px-4 py-2">Product 2</td>
+                    <td class="border border-gray-200 px-4 py-2"> रु 150 </td>
+                    <td class="border border-gray-200 px-4 py-2 text-yellow-600">Pending</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
