@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tools Nepal</title>
+    <title>Tools Nepal - Payment</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -24,15 +24,55 @@
             </div>
         </div>
     </nav>
-
-    <!-- purchase history table  -->
+    
+    <!-- Payment Section -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
         <h3 class="text-3xl font-bold text-center mb-10">Make Payment</h3>
-        <p class="text-gray-600 mb-4">Scan the QR code below to make a payment.</p>
-        <div class="bg-gray-100 p-4 rounded-lg mb-4">
-            <img src="https://docs.lightburnsoftware.com/legacy/img/QRCode/ExampleCode.png" alt="QR Code" class="mx-auto">
+        
+        <div class="max-w-md mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+            <div class="flex">
+                <!-- eSewa Tab -->
+                <button id="esewaTab" class="w-1/3 py-4 text-center bg-teal-600 text-white font-bold focus:outline-none">
+                    eSewa
+                </button>
+                
+                <!-- Khalti Tab -->
+                <button id="khaltiTab" class="w-1/3 py-4 text-center bg-gray-200 text-gray-600 font-bold focus:outline-none">
+                    Khalti
+                </button>
+                
+                <!-- IME Pay Tab -->
+                <button id="imePayTab" class="w-1/3 py-4 text-center bg-gray-200 text-gray-600 font-bold focus:outline-none">
+                    IME Pay
+                </button>
+            </div>
+
+            <!-- eSewa QR Code Section -->
+            <div id="esewaQR" class="p-8">
+                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                    <img src="https://docs.lightburnsoftware.com/legacy/img/QRCode/ExampleCode.png" alt="eSewa QR Code" class="mx-auto mb-4 rounded-lg">
+                    <p class="text-sm text-gray-600">Scan to pay via eSewa</p>
+                </div>
+            </div>
+
+            <!-- Khalti QR Code Section (Initially Hidden) -->
+            <div id="khaltiQR" class="p-8 hidden">
+                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                    <img src="https://docs.lightburnsoftware.com/legacy/img/QRCode/ExampleCode.png" alt="Khalti QR Code" class="mx-auto mb-4 rounded-lg">
+                    <p class="text-sm text-gray-600">Scan to pay via Khalti</p>
+                </div>
+            </div>
+
+            <!-- IME Pay QR Code Section (Initially Hidden) -->
+            <div id="imePayQR" class="p-8 hidden">
+                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                    <img src="https://docs.lightburnsoftware.com/legacy/img/QRCode/ExampleCode.png" alt="IME Pay QR Code" class="mx-auto mb-4 rounded-lg">
+                    <p class="text-sm text-gray-600">Scan to pay via IME Pay</p>
+                </div>
+            </div>
         </div>
-        <form action="#" method="POST" enctype="multipart/form-data" class="space-y-4">
+
+        <form action="#" method="POST" enctype="multipart/form-data" class="max-w-md mx-auto mt-6 space-y-4">
             <label class="block">
                 <span class="text-gray-700">Upload Payment Screenshot</span>
                 <input type="file" name="payment_screenshot" accept="image/*" 
@@ -43,5 +83,51 @@
             </button>
         </form> 
     </div>
+
+    <script>
+        const esewaTab = document.getElementById('esewaTab');
+        const khaltiTab = document.getElementById('khaltiTab');
+        const imePayTab = document.getElementById('imePayTab');
+        
+        const esewaQR = document.getElementById('esewaQR');
+        const khaltiQR = document.getElementById('khaltiQR');
+        const imePayQR = document.getElementById('imePayQR');
+
+        // Function to reset tabs and QR sections
+        function resetTabs() {
+            [esewaTab, khaltiTab, imePayTab].forEach(tab => {
+                tab.classList.replace('bg-teal-600', 'bg-gray-200');
+                tab.classList.replace('text-white', 'text-gray-600');
+            });
+
+            [esewaQR, khaltiQR, imePayQR].forEach(qr => {
+                qr.classList.add('hidden');
+            });
+        }
+
+        // eSewa Tab Event Listener
+        esewaTab.addEventListener('click', () => {
+            resetTabs();
+            esewaTab.classList.replace('bg-gray-200', 'bg-teal-600');
+            esewaTab.classList.replace('text-gray-600', 'text-white');
+            esewaQR.classList.remove('hidden');
+        });
+
+        // Khalti Tab Event Listener
+        khaltiTab.addEventListener('click', () => {
+            resetTabs();
+            khaltiTab.classList.replace('bg-gray-200', 'bg-teal-600');
+            khaltiTab.classList.replace('text-gray-600', 'text-white');
+            khaltiQR.classList.remove('hidden');
+        });
+
+        // IME Pay Tab Event Listener
+        imePayTab.addEventListener('click', () => {
+            resetTabs();
+            imePayTab.classList.replace('bg-gray-200', 'bg-teal-600');
+            imePayTab.classList.replace('text-gray-600', 'text-white');
+            imePayQR.classList.remove('hidden');
+        });
+    </script>
 </body>
 </html>
